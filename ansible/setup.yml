@@ -1,0 +1,12 @@
+---
+- name: ubuntu-provisioning
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  roles:
+#  - apt_packages
+   - awscli
+#  - environment-modules-config
+#  - conda-install
+#  - conda-env-setting

@@ -1,0 +1,19 @@
+---
+-
+  name: copy-miniconda-installer
+  copy:
+    src: files/{{ item }}
+    dest: /home/ubuntu/
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+  with_items:
+    - "{{ miniconda_installer_name }}"
+-
+  name: install-miniconda
+  become: yes
+  become_user: ubuntu
+  command: bash /home/ubuntu/{{ item }} -b -p /shared/miniconda
+  with_items:
+  - "{{ miniconda_installer_name }}"
+  

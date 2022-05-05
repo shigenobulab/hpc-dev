@@ -1,0 +1,14 @@
+---
+- name: try
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  roles:
+#  - mod-instl-seqkit
+#  - mod-instl-blast
+#   - mod-instl-hisat2
+  - mod-instl-samtools
+
+
+  

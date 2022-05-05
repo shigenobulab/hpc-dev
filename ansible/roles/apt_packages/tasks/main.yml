@@ -1,0 +1,12 @@
+---
+#- name: Upgrade all package
+#  apt:
+#    update_cache: yes
+#    upgrade: yes
+
+- name: Install apt packages
+  apt:
+    name:
+      - emacs-nox
+      - tree
+    state: latest

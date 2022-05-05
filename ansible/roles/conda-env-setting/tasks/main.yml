@@ -1,0 +1,17 @@
+- name: append_conda_config_to_bashrc
+  blockinfile:
+    path: /home/ubuntu/.bashrc
+    create: yes     
+    insertafter: EOF
+    marker: "# {mark} ANSIBLE miniconda setup."
+    block: "{{item}}"
+  with_file:
+    - files/append_bashrc.txt
+
+- name: disable_auto_activation_of_base
+  blockinfile:
+    path: /home/ubuntu/.condarc
+    create: yes
+    insertafter: EOF
+    block: "auto_activate_base: false"
+    
