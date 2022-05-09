@@ -1,19 +1,21 @@
 ---
--
-  name: copy-miniconda-installer
+- name: download installer
+  get_url: 
+    url: "{{ source_url }}"
+    dest: "/home/ubuntu/SetUp/work/{{ installer_name }}"
+    owner: ubuntu
+    
+- name: copy-miniconda-installer
   copy:
-    src: files/{{ item }}
+    src: /home/ubuntu/SetUp/work/{{ installer_name }}
     dest: /home/ubuntu/
     owner: ubuntu
     group: ubuntu
     mode: '0644'
-  with_items:
-    - "{{ miniconda_installer_name }}"
 -
   name: install-miniconda
   become: yes
   become_user: ubuntu
-  command: bash /home/ubuntu/{{ item }} -b -p /shared/miniconda
-  with_items:
-  - "{{ miniconda_installer_name }}"
+  command: bash /home/ubuntu/SetUp/work/{{ installer_name }} -b -p /shared/miniconda
+
   
