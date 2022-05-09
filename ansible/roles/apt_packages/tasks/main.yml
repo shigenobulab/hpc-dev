@@ -1,8 +1,8 @@
 ---
-#- name: Upgrade all package
-#  apt:
-#    update_cache: yes
-#    upgrade: yes
+- name: Upgrade all package
+  apt:
+    update_cache: yes
+    upgrade: yes
 
 - name: Install apt packages
   apt:
@@ -10,3 +10,9 @@
       - emacs-nox
       - tree
     state: latest
+
+- name: Install snap packages
+  snap:
+    name: ruby
+    classic: yes
+

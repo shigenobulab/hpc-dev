@@ -1,0 +1,12 @@
+---
+- name: copy installer script
+  copy:
+    src: files/install_R_v4.sh
+    dest: /ubuntu/tmp/
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+
+- name: install-R ver.4
+  become: yes
+  command: bash /ubuntu/tmp/install_R_v4.sh

@@ -1,0 +1,15 @@
+- name: prepare directories
+  become: yes
+  become_user: ubuntu
+  file:
+    path: "{{ item.path }}"
+    state: directory
+  loop:
+    - path: /home/ubuntu/work/
+    - path: /home/ubuntu/tmp/
+    - path: /home/ubuntu/bin/
+    - path: /home/ubuntu/SetUp/
+    - path: /home/ubuntu/SetUp/work/
+    - path: /home/ubuntu/SetUp/tmp/
+
+

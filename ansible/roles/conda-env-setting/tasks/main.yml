@@ -12,6 +12,8 @@
   blockinfile:
     path: /home/ubuntu/.condarc
     create: yes
+    owner: ubuntu
+    group: ubuntu
     insertafter: EOF
     block: "auto_activate_base: false"
     

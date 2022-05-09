@@ -1,0 +1,21 @@
+---
+- name: copy installer script template
+  copy:
+    src: files/conda_pkg_install.sh.j2
+    dest: /home/ubuntu/SetUp/work
+    mode: 0644
+
+- name: generate installer script
+  template:
+    src: /home/ubuntu/SetUp/work/conda_pkg_install.sh.j2
+    dest: /home/ubuntu/SetUp/work/conda_pkg_install.sh
+    owner: ubuntu
+    group: ubuntu
+    mode: 0755
+-
+  name: install-miniconda
+  become: yes
+  become_user: ubuntu
+  command: bash /home/ubuntu/SetUp/work/conda_pkg_install.sh
+
+  

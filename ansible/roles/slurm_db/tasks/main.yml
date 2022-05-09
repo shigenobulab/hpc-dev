@@ -1,0 +1,72 @@
+---
+- name: Install mysql
+  apt:
+    name:
+      - mysql-client
+    state: latest
+- name: pre-prepare slurmdb.conf
+  copy:
+    src: files/slurmdbd.conf.j2
+    dest: /ubuntu/tmp/
+    owner: slurm
+    group: slurm
+    mode: 0644
+
+- name: prepare slurmdbd.conf 
+  template:
+    src: /ubuntu/tmp/slurmdbd.conf.j2
+    dest: /opt/slurm/etc/slurmdbd.conf
+    owner: slurm
+    group: slurm
+    mode: 0600
+
+- name: backup slurm.conf before modification
+  copy: 
+    src: /opt/slurm/etc/slurm.conf
+    dest: /opt/slurm/etc/slurm.conf.bkup
+
+- name: append texts to slurm.conf
+  blockinfile:
+    path: /opt/slurm/etc/slurm.conf
+    insertafter: EOF
+    marker: "# {mark} ANSIBLE setup."
+    block: "{{item}}"
+  with_file:
+    - files/slurm.conf.append.j2
+
+- name: edit slurm.conf to set ClusterName
+  lineinfile:
+    dest: /opt/slurm/etc/slurm.conf
+    state: present
+    backrefs: yes
+    regexp: '^ClusterName\='
+    line: 'ClusterName={{ cluster_name }}'
+
+- name: delete old clustername file
+  file: 
+    path: /var/spool/slurm.state/clustername
+    state: absent
+
+- name: pre-prepare slurmdbd.conf
+  copy:
+    src: files/slurmdbd.service.j2
+    dest: /ubuntu/tmp/
+    mode: 0644
+
+- name: create system service for slurmdbd.conf
+  template:
+    src: /ubuntu/tmp/slurmdbd.service.j2
+    dest: /etc/systemd/system/slurmdbd.service
+    mode: 0644
+
+- name: setting service for slurmdbd
+  service:
+    name: slurmdbd
+    state: restarted
+    enabled: yes
+
+- name: setting service for slurmctld
+  service:
+    name: slurmctld
+    state: restarted
+  
