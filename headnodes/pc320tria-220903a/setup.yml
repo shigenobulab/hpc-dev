@@ -1,0 +1,14 @@
+---
+- name: setup
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  vars:
+    tmpdir: /home/ubuntu/Ansible/tmp
+  roles:
+#  - apt_packages
+   - awscli2
+#  - environment-modules-config
+#  - conda-install
+#  - conda-env-setting
