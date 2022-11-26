@@ -1,0 +1,24 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  vars: 
+    tmpdir: /home/ubuntu/Ansible/tmp
+  roles:
+    - mod-instl-seqkit
+#    - conda-pkg-diamond
+
+#    - conda-pkg-salmon
+#    - conda-pkg-cutadapt
+
+
+#    - conda-pkg-salmon
+#    - mod-instl-blast
+
+#   - environment-modules-config
+#  - mod-instl-blast
+#   - mod-instl-hisat2
+#  - mod-instl-samtools
+#  - R-instl

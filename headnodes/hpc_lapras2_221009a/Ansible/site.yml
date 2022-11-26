@@ -1,0 +1,15 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  vars: 
+    tmpdir: /home/ubuntu/Ansible/tmp
+#  roles:
+#    - mod-instl-seqkit
+#   - environment-modules-config
+#  - mod-instl-blast
+#   - mod-instl-hisat2
+#  - mod-instl-samtools
+#  - R-instl

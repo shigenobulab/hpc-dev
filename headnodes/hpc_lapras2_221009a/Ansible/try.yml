@@ -1,0 +1,11 @@
+---
+- name: try
+  import_playbook: tmp.yml
+#  tasks:
+#    - mod-instl-seqkit
+
+#   - environment-modules-config
+#  - mod-instl-blast
+#   - mod-instl-hisat2
+#  - mod-instl-samtools
+#  - R-instl

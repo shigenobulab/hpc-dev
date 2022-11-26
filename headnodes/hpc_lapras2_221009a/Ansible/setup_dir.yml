@@ -1,0 +1,13 @@
+
+  - name: setup dir
+    hosts: localhost
+    connection: local
+    become: yes
+    gather_facts: no
+    vars: 
+      tmpdir: /home/ubuntu/Ansible/tmp
+    tasks:
+      - name: create tmpdir for ansible
+        file:
+          path: "{{ tmpdir }}"
+          state: directory
