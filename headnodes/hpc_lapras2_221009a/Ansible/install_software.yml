@@ -7,18 +7,24 @@
   vars: 
     tmpdir: /home/ubuntu/Ansible/tmp
   roles:
-    - mod-instl-seqkit
-#    - conda-pkg-diamond
-
-#    - conda-pkg-salmon
-#    - conda-pkg-cutadapt
+    - conda-pkg-transdecoder-v5.5.0
 
 
-#    - conda-pkg-salmon
-#    - mod-instl-blast
+#=== installed
+#    - mod-instl-seqkit-v2.3.1
+#    - mod-instl-stringtie
+#    - mod-instl-hisat2
+#    - mod-instl-htslib
+#    - mod-instl-gffread
+#    - conda-pkg-braker2
+#    - conda-pkg-busco
+#   - mod-instl-seqkit
+#   - mod-instl-samtools
+#   - conda-pkg-salmon
+#   - mod-instl-blast
+#   - conda-pkg-diamond
 
-#   - environment-modules-config
-#  - mod-instl-blast
+#=== not installed
+#   - conda-pkg-cutadapt
 #   - mod-instl-hisat2
-#  - mod-instl-samtools
-#  - R-instl
+#   - R-instl
