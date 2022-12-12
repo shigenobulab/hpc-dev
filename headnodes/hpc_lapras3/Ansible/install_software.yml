@@ -1,0 +1,39 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: yes
+  gather_facts: no
+  vars: 
+    tmpdir: /home/ubuntu/Ansible/tmp
+  roles:
+    - mod-instl-gffread-v0.12.7
+#    - mod-instl-htslib-v1.16
+#    - mod-instl-samtools-v1.15.1
+
+#=== installed
+#    - conda-pkg-bioconductor-edger-v3.40.0
+#    - conda-pkg-salmon-v1.9.0
+#    - conda-pkg-sqlite-v3.40.0
+#    - mod-instl-muscle-v5.1
+#    - conda-pkg-orthofinder-v2.5.4
+#    - conda-pkg-eggnog-mapper-v2.1.9
+#    - mod-instl-seqkit-v2.3.1
+#    - mod-instl-blast-v2.13.0
+#    - conda-pkg-diamond-v2.0.15
+
+#=== not installed
+#    - conda-pkg-transdecoder-v5.5.0
+#    - mod-instl-stringtie
+#    - mod-instl-hisat2
+#    - mod-instl-htslib
+#    - mod-instl-gffread
+#    - conda-pkg-braker2
+#    - conda-pkg-busco
+#   - mod-instl-samtools
+#   - conda-pkg-salmon
+#   - mod-instl-blast
+#   - conda-pkg-diamond
+#   - conda-pkg-cutadapt
+#   - mod-instl-hisat2
+#   - R-instl

@@ -1,0 +1,41 @@
+---
+- name: prepare_dir_for_module_files
+  file:
+    path: "/shared/modulefiles/{{ module_name }}"
+    state: directory
+    owner: "ubuntu"
+    group: "ubuntu"
+    mode:  "755"
+
+- name: download binary
+  get_url: 
+    url: "{{ source_url }}"
+    dest: "{{ tmpdir }}/{{ archive_file }}"
+    owner: ubuntu
+
+- name: prepare_dir_for_software
+  file:
+    path: "/shared/software/{{ module_name }}-v{{ version }}"
+    state: directory
+    owner: "ubuntu"
+    group: "ubuntu"
+    mode:  "755"
+
+- name: unarchive
+  unarchive:
+    src: "{{ tmpdir }}/{{ archive_file }}"
+    dest: "/shared/software/{{ module_name }}-v{{ version }}/"
+
+- name: copy_modulefile_template
+  copy: 
+    src: files/modulefile.tmpl
+    dest: "/shared/modulefiles/{{ module_name }}/{{ version }}"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: add_line_in_modulefile
+  ansible.builtin.lineinfile:
+    path: "/shared/modulefiles/{{ module_name }}/{{ version }}"
+    line: "prepend-path PATH /shared/software/{{ module_name }}-v{{ version }}/"
+

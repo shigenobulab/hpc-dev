@@ -1,0 +1,21 @@
+---
+- name: download installer
+  get_url: 
+    url: "{{ source_url }}"
+    dest: "{{ tmpdir }}/{{ installer_name }}"
+    owner: ubuntu
+    
+# - name: copy-miniconda-installer
+#   copy:
+#     src: "{{ tmpdir }}/{{ installer_name }}"
+#     dest: /home/ubuntu/
+#     owner: ubuntu
+#     group: ubuntu
+#     mode: '0644'
+
+- name: install-miniconda
+  become: yes
+  become_user: ubuntu
+  command: bash {{ tmpdir }}/{{ installer_name }} -b -p /shared/miniconda
+
+  
