@@ -7,11 +7,13 @@
   vars: 
     tmpdir: /home/ubuntu/Ansible/tmp
   roles:
-    - mod-instl-gffread-v0.12.7
-#    - mod-instl-htslib-v1.16
-#    - mod-instl-samtools-v1.15.1
+    - mod-instl-bcftools-v1.17
+
 
 #=== installed
+#    - mod-instl-bcftools-v1.17
+#    - conda-pkg-bwa-v0.7.17/
+#    - conda-pkg-picard-v2.27.5
 #    - conda-pkg-bioconductor-edger-v3.40.0
 #    - conda-pkg-salmon-v1.9.0
 #    - conda-pkg-sqlite-v3.40.0
@@ -21,6 +23,9 @@
 #    - mod-instl-seqkit-v2.3.1
 #    - mod-instl-blast-v2.13.0
 #    - conda-pkg-diamond-v2.0.15
+#    - mod-instl-gffread-v0.12.7
+#    - mod-instl-htslib-v1.16
+#    - mod-instl-samtools-v1.15.1
 
 #=== not installed
 #    - conda-pkg-transdecoder-v5.5.0
