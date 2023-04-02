@@ -7,10 +7,17 @@
   vars: 
     tmpdir: /home/ubuntu/Ansible/tmp
   roles:
-    - mod-instl-bcftools-v1.17
-
+    - conda-pkg-cd-hit-v4.8.1
 
 #=== installed
+#    - conda-pkg-pear-v0.9.6
+#    - conda-pkg-bowtie2-v2.5.1
+#    - mod-instl-bedtools-v2.30.0
+#    - conda-pkg-gmap-v2021.08.25
+#    - conda-pkg-repeatmodeler-v2.0.3
+#    - conda-pkg-busco-v5.4.5
+#    - conda-pkg-braker2-v2.1.6
+#    - conda-pkg-exonerate-v2.4.0
 #    - mod-instl-bcftools-v1.17
 #    - conda-pkg-bwa-v0.7.17/
 #    - conda-pkg-picard-v2.27.5
