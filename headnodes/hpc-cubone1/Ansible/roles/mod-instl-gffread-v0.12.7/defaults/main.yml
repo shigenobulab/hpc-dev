@@ -1,0 +1,5 @@
+module_name: gffread
+version: "0.12.7"
+source_url: https://github.com/gpertea/gffread/releases/download/v0.12.7/gffread-0.12.7.Linux_x86_64.tar.gz
+archive_file: gffread-0.12.7.Linux_x86_64.tar.gz
+

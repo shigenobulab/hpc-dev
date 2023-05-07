@@ -1,0 +1,6 @@
+module_name: bedtools
+version: "2.30.0"
+source_url: https://github.com/arq5x/bedtools2/releases/download/v2.30.0/bedtools.static.binary
+bin_file: bedtools.static.binary
+bin_alias: bedtools
+

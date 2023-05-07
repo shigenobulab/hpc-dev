@@ -1,0 +1,5 @@
+module_name: muscle
+version: "5.1"
+source_url: https://github.com/rcedgar/muscle/releases/download/5.1.0/muscle5.1.linux_intel64
+bin_file: muscle5.1.linux_intel64
+bin_alias: muscle

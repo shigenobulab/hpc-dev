@@ -1,0 +1,40 @@
+- name: 'Upgrade all apt packages'
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: 'install apt packages'
+  apt:
+    name:
+      - build-essential
+      - libssl-dev
+      - libcurl4-openssl-dev
+      - libreadline-dev
+      - ruby-dev
+      - zlib1g-dev
+      - libyaml-dev
+    state: latest
+
+- name: rbenv install
+  become: false
+  git:
+    repo: https://github.com/sstephenson/rbenv.git
+    dest: "{{ rbenv_path }}"
+
+- name: rbenv-install install
+  become: false
+  git:
+    repo: https://github.com/sstephenson/ruby-build.git
+    dest: "{{ rbenv_path }}/plugins/ruby-build"
+
+- name: PATH for rbenv
+  become: false
+  blockinfile:
+    dest: "/home/ubuntu/.bashrc"
+    create: yes
+    insertafter: EOF
+    marker: "# {mark} ANSIBLE rbenv setup."
+    content: |
+        export RBENV_ROOT={{ rbenv_path }}
+        export PATH="$RBENV_ROOT/bin:$PATH"
+        eval "$(rbenv init -)"

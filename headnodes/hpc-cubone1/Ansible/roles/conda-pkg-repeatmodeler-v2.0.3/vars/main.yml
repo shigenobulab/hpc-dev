@@ -1,0 +1,4 @@
+pkg: repeatmodeler
+pkgver: "2.0.3"
+pyver: "3.8.16"
+envname: pkg-{{ pkg }}-{{ pkgver }}

@@ -1,0 +1,5 @@
+module_name: interproscan
+version: "5.59-91.0"
+archive_dir: /mnt/efs-01/shared/software_x86
+archive_file: interproscan-5.59-91.0-64-bit.tar.gz
+

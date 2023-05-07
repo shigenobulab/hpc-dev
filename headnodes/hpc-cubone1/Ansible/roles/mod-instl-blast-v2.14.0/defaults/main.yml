@@ -1,0 +1,5 @@
+module_name: blast
+version: "2.14.0"
+source_url: https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-linux.tar.gz
+archive_file: ncbi-blast-2.14.0+-x64-linux.tar.gz
+bin_dir: bin

@@ -1,0 +1,39 @@
+---
+- name: prepare_dir_for_module_files
+  file:
+    path: "/shared/modulefiles/{{ module_name }}"
+    state: directory
+    owner: "ubuntu"
+    group: "ubuntu"
+    mode:  "755"
+
+- name: prepare_dir_for_software
+  file:
+    path: "/shared/software/{{ module_name }}-v{{ version }}"
+    state: directory
+    owner: "ubuntu"
+    group: "ubuntu"
+    mode:  "755"
+
+- name: unarchive
+  unarchive:
+    src: "{{ archive_dir }}/{{ archive_file }}"
+    dest: "/shared/software/{{ module_name }}-v{{ version }}/"
+
+- name: copy_modulefile_template
+  copy: 
+    src: files/modulefile.tmpl
+    dest: "/shared/modulefiles/{{ module_name }}/{{ version }}"
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: add_line_in_modulefile
+  ansible.builtin.lineinfile:
+    path: "/shared/modulefiles/{{ module_name }}/{{ version }}"
+    line: "prepend-path PATH /shared/software/{{ module_name }}-v{{ version }}/"
+
+- name: index_hmm_models
+  command:
+    cmd: "python3 setup.py interproscan.properties"
+    chdir: "/shared/modulefiles/{{ module_name }}/{{ version }}"
