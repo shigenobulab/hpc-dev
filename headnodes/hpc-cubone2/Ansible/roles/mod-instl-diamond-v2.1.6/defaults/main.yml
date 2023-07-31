@@ -1,0 +1,13 @@
+module_name: diamond
+version: "2.1.6"
+source_url: https://github.com/bbuchfink/diamond/releases/download/v2.1.6/diamond-linux64.tar.gz
+archive_file: diamond-linux64.tar.gz
+bin_file: diamond
+#bin_alias:
+
+
+#===
+# diamond-linux64.tar.gz
+# => (tar xzvf)
+# diamond in the top dir
+
