@@ -1,0 +1,7 @@
+module_name: hisat2
+version: "2.2.1"
+source_url: https://cloud.biohpc.swmed.edu/index.php/s/oTtGWbWjaxsQ2Ho/download
+archive_file: hisat2-2.2.1-Linux_x86_64.zip
+target_dir: hisat2-2.2.1
+bin_dir: ""
+

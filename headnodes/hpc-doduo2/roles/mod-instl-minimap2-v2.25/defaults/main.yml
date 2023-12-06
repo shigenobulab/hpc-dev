@@ -1,0 +1,6 @@
+module_name: minimap2
+version: "2.25"
+source_url: https://github.com/lh3/minimap2/releases/download/v2.26/minimap2-2.26_x64-linux.tar.bz2
+archive_file: minimap2-2.26_x64-linux.tar.bz2
+target_dir: minimap2-2.26_x64-linux
+bin_dir: ""

@@ -1,0 +1,7 @@
+module_name: stringtie
+version: "2.2.1"
+source_url: http://ccb.jhu.edu/software/stringtie/dl/stringtie-2.2.1.Linux_x86_64.tar.gz
+archive_file: stringtie-2.2.1.Linux_x86_64.tar.gz
+target_dir: stringtie-2.2.1.Linux_x86_64
+bin_dir: ""
+

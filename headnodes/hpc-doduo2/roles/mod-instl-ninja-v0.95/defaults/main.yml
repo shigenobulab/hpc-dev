@@ -1,0 +1,6 @@
+module_name: ninja
+version: "0.95"
+source_url: https://github.com/TravisWheelerLab/NINJA/archive/refs/tags/0.95-cluster_only.tar.gz
+archive_file: 0.95-cluster_only.tar.gz
+target_dir: NINJA-0.95-cluster_only/NINJA
+exec: "Ninja"

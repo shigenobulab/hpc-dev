@@ -1,0 +1,3 @@
+pkg: repeatmodeler
+pkgver: "2.0.4"
+envname: pkg-{{ pkg }}-vv{{ pkgver }}

@@ -1,0 +1,4 @@
+envname: pkg-orthofinder-2.5.4
+pkg: orthofinder
+pkgver: "2.5.4"
+pyver: "3.10"

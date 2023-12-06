@@ -1,0 +1,4 @@
+envname: pkg-hifiasm-v0.19.5
+pkg: hifiasm
+pkgver: "0.19.5"
+#pyver: "3.10"

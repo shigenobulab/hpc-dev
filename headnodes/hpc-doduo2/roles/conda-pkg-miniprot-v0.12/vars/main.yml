@@ -1,0 +1,4 @@
+envname: pkg-miniprot-v0.12
+pkg: miniprot
+pkgver: "0.12"
+#pyver: "3.10"
