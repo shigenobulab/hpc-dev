@@ -1,0 +1,3 @@
+pkg: bioconductor-edger
+pkgver: "4.0.2"
+envname: pkg-{{ pkg }}-v{{ pkgver }}

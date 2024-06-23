@@ -1,0 +1,6 @@
+---
+- name: download binaries
+  command:
+    cmd: rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ /home/ubuntu/Ansible2/playbook_common/rsync/
+
+

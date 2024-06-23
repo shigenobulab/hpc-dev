@@ -1,0 +1,19 @@
+---
+- name: create tmpdir
+  file:
+    path: "{{ tmpdir }}"
+    state: directory
+
+# - name: copy installer script template
+#   copy:
+#     src: files/bioconda_pkg_install.sh.j2
+#     dest: "{{ tmpdir }}"
+#     mode: 0644
+
+# - name: generate installer script
+#   template:
+#     src: "{{ tmpdir }}/bioconda_pkg_install.sh.j2"
+#     dest: "{{ tmpdir }}/bioconda_pkg_install.sh"
+#     mode: 0755
+
+  

@@ -1,0 +1,47 @@
+---
+- name: prepare_dir_for_module_files
+  file:
+    path: "{{ modulefiles_dir }}/{{ module_name }}"
+    state: directory
+    mode:  "755"
+
+- name: download binary
+  get_url: 
+    url: "{{ source_url }}"
+    dest: "{{ tmpdir }}/{{ archive_file }}"
+
+
+- name: prepare_dir_for_software
+  file:
+    path: "{{ module_software_dir }}/{{ module_name }}-v{{ version }}"
+    state: directory
+    mode:  "755"
+
+- name: prepare_dir_for_working
+  file:
+    path: "{{ tmpdir }}/{{ module_name }}-v{{ version }}"
+    state: directory
+    mode:  "755"
+
+- name: unarchive
+  unarchive:
+    src: "{{ tmpdir }}/{{ archive_file }}"
+    dest: "{{ tmpdir }}/{{ module_name }}-v{{ version }}"
+
+- name: copy unarchived binaries to software directory
+  copy:
+    src: "{{ tmpdir }}/{{ module_name }}-v{{ version }}/"
+    dest: "/shared/software/{{ module_name }}-v{{ version }}/"
+    mode:  "0555"
+
+- name: copy_modulefile_template
+  copy: 
+    src: files/modulefile.tmpl
+    dest: "{{ modulefiles_dir }}/{{ module_name }}/{{ version }}"
+    mode: '0755'
+
+- name: add_line_in_modulefile
+  ansible.builtin.lineinfile:
+    path: "{{ modulefiles_dir }}/{{ module_name }}/{{ version }}"
+    line: "prepend-path PATH /shared/software/{{ module_name }}-v{{ version }}"
+

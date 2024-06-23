@@ -1,0 +1,23 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+  vars:
+    tmpdir: /scratch/ansible/tmp
+    miniconda_root: /shared/miniconda
+  roles:
+#    - bioconda-install-base
+    - conda-pkg-emboss-v6.6.0
+    
+
+ 
+
+
+
+
+
+
+    
+

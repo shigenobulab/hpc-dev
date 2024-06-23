@@ -1,0 +1,19 @@
+---
+# - name: copy installer script template
+#   copy:
+#     src: files/conda_pkg_install.sh.j2
+#     dest: "{{ tmpdir }}"
+#     mode: 0644
+
+- name: generate installer script
+  template:
+    src: ../bioconda-install-base/files/bioconda_pkg_install.sh.j2
+    dest: "{{ tmpdir }}/bioconda_pkg_install-{{ envname }}.sh"
+    mode: 0755
+    
+- name: install-miniconda
+  script:
+    cmd: "{{ tmpdir }}/bioconda_pkg_install-{{ envname }}.sh"
+    chdir: "{{ tmpdir }}"
+
+  

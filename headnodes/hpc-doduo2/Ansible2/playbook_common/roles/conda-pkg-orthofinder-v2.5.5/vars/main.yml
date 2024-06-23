@@ -1,0 +1,3 @@
+pkg: orthofinder
+pkgver: "2.5.5"
+envname: pkg-{{ pkg }}-v{{ pkgver }}

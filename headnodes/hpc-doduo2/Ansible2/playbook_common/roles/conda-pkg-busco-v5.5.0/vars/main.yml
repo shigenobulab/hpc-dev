@@ -1,0 +1,3 @@
+pkg: busco
+pkgver: "5.5.0"
+envname: pkg-{{ pkg }}-{{ pkgver }}

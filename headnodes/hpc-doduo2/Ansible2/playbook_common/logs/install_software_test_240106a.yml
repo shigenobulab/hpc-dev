@@ -1,0 +1,24 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+  vars:
+    tmpdir: /scratch/ansible/tmp
+    miniconda_root: /shared/miniconda
+  roles:
+    - bioconda-install-base
+#    - conda-pkg-salmon-v1.10.1
+    - conda-pkg-busco-v5.5.0
+    
+
+ 
+
+
+
+
+
+
+    
+

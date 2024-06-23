@@ -1,0 +1,3 @@
+pkg: eggnog-mapper
+pkgver: "2.1.12"
+envname: pkg-{{ pkg }}-{{ pkgver }}

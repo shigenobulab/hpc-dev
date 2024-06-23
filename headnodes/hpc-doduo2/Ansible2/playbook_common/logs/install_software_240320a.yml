@@ -1,0 +1,13 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+  vars:
+    tmpdir: /scratch/ansible/tmp
+    miniconda_root: /shared/miniconda
+  roles:
+    - conda-pkg-miniprot-v0.13
+#    - mod-instl-ncbi_datasets
+ 

@@ -1,0 +1,4 @@
+module_name: ncbi-datasets
+version: "16.0.0"
+source_url: https://github.com/ncbi/datasets/releases/download/v16.0.0/linux-amd64.cli.package.zip
+archive_file: linux-amd64.cli.package.zip

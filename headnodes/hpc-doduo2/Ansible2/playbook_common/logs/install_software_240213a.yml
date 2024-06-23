@@ -1,0 +1,13 @@
+---
+- name: site
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+  vars:
+    tmpdir: /scratch/ansible/tmp
+    miniconda_root: /shared/miniconda
+  roles:
+    - conda-pkg-eggnog-mapper-v2.1.12
+ 
+    
