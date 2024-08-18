@@ -1,0 +1,22 @@
+---
+-
+  name: prepare_dir_for_modulefiles
+  file:
+    path: "/shared/modulefiles"
+    state: directory
+    owner: "ubuntu"
+    group: "ubuntu"
+    mode:  "755"
+
+- 
+  name: prepare_dir_for_software
+  file:
+    path: "/shared/software"
+    state: directory
+    owner: "ubuntu"
+    group: "ubuntu"
+    mode:  "755"
+
+-
+  name: add_config_line
+  lineinfile: dest=/etc/environment-modules/modulespath line="/shared/modulefiles/"

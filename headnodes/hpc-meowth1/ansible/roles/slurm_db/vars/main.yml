@@ -1,0 +1,4 @@
+storagepass: Okazaki20
+storagehost: pclustslurm3.cluster-cvmkkoivleqq.ap-northeast-1.rds.amazonaws.com
+cluster_name: hpc-meuwth1
+

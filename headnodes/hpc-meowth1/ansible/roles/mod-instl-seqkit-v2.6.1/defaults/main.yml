@@ -1,0 +1,4 @@
+module_name: seqkit
+version: "2.6.1"
+source_url: https://github.com/shenwei356/seqkit/releases/download/v2.6.1/seqkit_linux_amd64.tar.gz
+archive_file: seqkit_linux_amd64.tar.gz

@@ -1,0 +1,10 @@
+[Unit]
+Description=slurmdbd
+After=network.target
+[Service]
+Type=forking
+User=root
+ExecStart=/opt/slurm/sbin/slurmdbd
+Restart = always
+[Install]
+WantedBy=multi-user.target

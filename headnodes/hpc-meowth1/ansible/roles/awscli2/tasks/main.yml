@@ -1,0 +1,25 @@
+---
+- name: Uninstall awscli v1
+  file:
+    path: 
+    - /usr/local/aws
+    - /usr/local/bin/aws
+    state: absent
+
+- name: Download awscli v2
+  get_url: 
+    url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
+    dest: "{{ tmpdir }}/awscliv2.zip"
+    owner: ubuntu
+
+- name: Unarchive awscli v2
+  unarchive:
+    src: "{{ tmpdir }}/awscliv2.zip"
+    dest: "{{ tmpdir }}"
+
+- name: Install awscli v2
+  become: true
+  command: "{{ tmpdir }}/aws/install"
+
+
+   

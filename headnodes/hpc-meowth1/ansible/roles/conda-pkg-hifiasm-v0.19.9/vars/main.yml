@@ -1,0 +1,3 @@
+pkg: hifiasm
+pkgver: "0.19.9"
+envname: pkg-{{ pkg }}-v{{ pkgver }}

@@ -1,0 +1,7 @@
+module_name: htslib
+version: "1.20"
+source_url: https://github.com/samtools/bcftools/releases/download/1.20/bcftools-1.20.tar.bz2
+archive_file: bcftools-1.20.tar.bz2
+target_dir: bcftools-1.20
+bin_dir: "bin"
+

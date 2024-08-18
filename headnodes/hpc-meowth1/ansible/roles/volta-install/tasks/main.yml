@@ -1,0 +1,17 @@
+# installation instruction by developer
+# $ curl https://get.volta.sh | bash
+# to apply this procedure to ths standard manner for ansible
+# see the guide as follows
+# - https://dev.to/ymotongpoo/run-remote-install-scripts-without-using-curl-command-in-ansible-5b6b
+# - https://ymotongpoo.hatenablog.com/entry/2021/03/01/224610
+
+- name: Fetch volta installer
+  ansible.builtin.uri:
+    url: https://get.volta.sh
+    return_content: yes
+  register: volta_installer
+
+- name: Run volta installer
+  ansible.builtin.shell:
+    cmd: bash
+    stdin: "{{ volta_installer.content }}"
